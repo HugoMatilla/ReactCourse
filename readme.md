@@ -456,7 +456,7 @@ The _Main_ object will be in charge of rendering the different pages of the  rou
 ###3 Nav
 In the Navigator component we can set `Links` that will redirect the app to the pages we want to show.
 
-});```javascript
+```javascript
 
 	var Nav = React.createClass({
 	  render: function () {
