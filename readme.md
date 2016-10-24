@@ -1,5 +1,5 @@
 #1 Simple element
-```
+```javascript
 ReactDOM.render(
   <h1>Hello React!</h1>,
   document.getElementById('app')
@@ -7,7 +7,7 @@ ReactDOM.render(
 
 ```	
 #2 JSX
-```
+```javascript
 var Greeter = React.createClass({
   render: function () {
     return (
@@ -31,7 +31,7 @@ ReactDOM.render(
 
 ` <h1>Hello {name}!</h1>`
 
-```
+```javascript
 var Greeter = React.createClass({
   getDefaultProps: function () {
     return {
@@ -65,7 +65,7 @@ ReactDOM.render(
 
 `var name = this.refs.name.value;`
 
-```
+```javascript
 var Greeter = React.createClass({
   getDefaultProps: function () {
     return {
@@ -115,7 +115,7 @@ States will be updated, props no.
 
 `this.setState({name: name });`
 
-```
+```javascript
 
 	var Greeter = React.createClass({
 	  getDefaultProps: function () {
@@ -174,7 +174,7 @@ Props can't.
 CONTAINER: maintain  state. only render children
 PRESENTATIONAL: Print something,  (don't maintain state)  
 
-```
+```javascript
 
 	var GreeterMessage = React.createClass({
 	    render: function () {
@@ -200,7 +200,7 @@ PRESENTATIONAL: Print something,  (don't maintain state)
 
 ```
 
-```
+```javascript
 	
 	// PRESENTATIONAL: Print somthing (don't maintain state)  //
 	var GreeterMessage = React.createClass({
@@ -619,7 +619,7 @@ We can substitute the way we create them
 npm install css-loader script-loader style-loader jquery foundation-sites --save-dev
 
 ##Update Webpack entries
-```
+```javascript
 
 	var webpack = require('webpack');
 
@@ -642,7 +642,7 @@ npm install css-loader script-loader style-loader jquery foundation-sites --save
 ```
 ## Add CSS
 **app.jsx**
-```
+```javascript
 	
 	// App css
 	require('style!css!applicationStyles');
@@ -655,7 +655,7 @@ npm install css-loader script-loader style-loader jquery foundation-sites --save
 ##Style JSX
 
 Change HTML `class` to `className`
-```
+```javascript
 	<div className="top-bar">
 ```
 
@@ -663,7 +663,7 @@ Change HTML `class` to `className`
 Mounting: [componentDidMount](https://facebook.github.io/react/docs/component-specs.html#mounting-componentdidmount)
 We can call a javascript function inside a component calling it from `componentDidMount`
 
-```
+```javascript
   componentDidMount: function () {
     var modal = new Foundation.Reveal($('#error-modal'));
     modal.open();
@@ -673,7 +673,7 @@ We can call a javascript function inside a component calling it from `componentD
 ##propTypes and required props
 We can force the props that are passed to a component to be always set.
 
-```
+```javascript
 
   propTypes: {
       title: React.PropTypes.string,
@@ -686,7 +686,7 @@ We can force the props that are passed to a component to be always set.
 
 Chage name to `app.scss`
 
-```
+```javascript
 	// App css
 	require('style!css!sass!applicationStyles') 
 ```
@@ -695,7 +695,7 @@ Chage name to `app.scss`
 Automatically trigger action when the component is mount
 Get the query parameter: `var location = this.props.location.query.location;`
 Set the route to our application `window.location.hash = '#/';`
-```
+```javascript
 
   componentDidMount: function () {
     var location = this.props.location.query.location;
@@ -711,7 +711,7 @@ Set the route to our application `window.location.hash = '#/';`
 ###Catching changes on props
 Called any time the props get updated.
 
-```
+```javascript
 
 	componentWillReceiveProps: function (newProps) {
 	    var location = newProps.location.query.location;
@@ -726,13 +726,13 @@ Called any time the props get updated.
 #SCSS Grouping
 **app.scss**
 
-```
+```javascript
 @import "base/variables";
 @import "components/navigation";
 ```
 It is important to prefix the file names with `_`
 **_variables.scss**
-```
+```javascript
 
 	// Colors
 	$grey: #333333;
@@ -758,7 +758,7 @@ Reporters the framework.
 Timeout is important to be fast when tests not finish.
 
 **karma.cong.js**
-```
+```javascript
 
 	var webpackConfig = require('./webpack.config.js');
 
@@ -787,7 +787,7 @@ Timeout is important to be fast when tests not finish.
 ```
 
 **app.test.jsx**
-```
+```javascript
 
 	var expect = require('expect');
 
@@ -799,7 +799,7 @@ Timeout is important to be fast when tests not finish.
 ```
 
 **package.json**
-```
+```javascript
 	
 	"scripts": {
 	    "test": "karma start",
@@ -811,7 +811,7 @@ Timeout is important to be fast when tests not finish.
 ##Tests in react
 `npm install react-addons-test-utils --save-dev`
 
-```
+```javascript
 
 	var React = require('react');
 	var ReactDOM = require('react-dom');
@@ -833,7 +833,7 @@ Timeout is important to be fast when tests not finish.
 	});
 ```
 ###UI Tests
-```
+```javascript
 	  
 	  describe('render', () => {
 	    it('should render clock to output', () => {
@@ -848,7 +848,7 @@ Timeout is important to be fast when tests not finish.
 ###Tests spies
 Check if a function is called
 
-```
+```javascript
 
 	  it('should call onSetCountdown if valid seconds entered', () => {
 	    var spy = expect.createSpy();
@@ -863,7 +863,7 @@ Check if a function is called
 ```
 
 ###Catch component updates
-```
+```javascript
 
   componentDidUpdate: function (prevProps, prevState) {
     if (this.state.countdownStatus !== prevState.countdownStatus) {
@@ -878,7 +878,7 @@ Check if a function is called
 #Functions returning new functions
 Section8 - 77. Pausing, Starting, and Resetting
 
-```
+```javascript
 
 	onStatusChange: function (newStatus) {
 	    return () => {
@@ -909,7 +909,7 @@ Section8 - 77. Pausing, Starting, and Resetting
 
 # Add libraries to Karma
 **karma.config.js**
-```
+```javascript
 
     files: [
       'node_modules/jquery/dist/jquery.min.js',
@@ -922,7 +922,7 @@ Section8 - 77. Pausing, Starting, and Resetting
 
 Section 8 Lecture 83
 **webpack.config.js**
-```
+```javascript
 
 	var path = require('path');
 
@@ -935,7 +935,7 @@ Section 8 Lecture 83
 
 **app.scss**
 
-```
+```javascript
 
 	// foundation
 	@import "base/foundation-settings";
@@ -952,7 +952,7 @@ Copy it from foundation
 
 ##Add components to webpack Automatically
 
-```
+```javascript
 resolve: {
     
     modulesDirectories: [
@@ -966,7 +966,7 @@ resolve: {
 
 ##Spread operator      
 Useful to call functions with parameters that come from an array.
-```
+```javascript
 
 	var person = ['Andrew', 25];
 	var personTwo = ['Jen', 29];
@@ -979,7 +979,7 @@ Useful to call functions with parameters that come from an array.
 ```	
 
 To remove the array inside: `[3,[1,2]] => [3,1,2]`
-```
+```javascript
 
 	var groupA = ['Jen', 'Cory'];
 	var groupB = ['Vikram'];
@@ -994,7 +994,7 @@ To remove the array inside: `[3,[1,2]] => [3,1,2]`
 `key={todo.id}` creates an id for each object. It is needed so react knows that every item is different.
 `{...todo}` **spread operator** spread all the properties of an object, (in this case) into individual props[...](http://odetocode.com/blogs/scott/archive/2014/09/02/features-of-es6-part-5-the-spread.aspx)
 
-```
+```javascript
 
 	todos.map((todo) => {
 		return (
@@ -1021,7 +1021,7 @@ Return the `Todo` component in the `todoList`
 The reducer has a state and an actions as parameters. 
 We can set a default paramater input if it is empty. 
 
-```
+```javascript
 
 	var stateDefault = {
 	  searchText: '',
@@ -1044,7 +1044,7 @@ We can set a default paramater input if it is empty.
 Actions are objects
 They must have a parameter `type` with the name of the action
 **Action**
-```
+```javascript
 	
 	var action = {
 		type: 'CHANGE_NAME'
@@ -1052,12 +1052,12 @@ They must have a parameter `type` with the name of the action
 	}
 ```
 **Dispatch**
-```
+```javascript
 
 	store.dispatch(action)
 ```
 **Reducer**
-```
+```javascript
 
 	var reducer = (state = {name: 'Anonymous'}, action) => {
 	  switch (action.type) {
@@ -1073,7 +1073,7 @@ They must have a parameter `type` with the name of the action
 ```
 ##Subscribing To Changes & Debugging
 Any time the store state changes the subscriber will run.
-```
+```javascript
 	
 	store.subscribe(() => {
   		var state = store.getState();
@@ -1083,7 +1083,7 @@ Any time the store state changes the subscriber will run.
 
 **Unsubscribe**
 `subscribe` returns and object that when called it unsubscribes.
-```
+```javascript
 
 	// Subscribe to changes
 	var unsubscribe = store.subscribe(() => {
@@ -1097,7 +1097,7 @@ Any time the store state changes the subscriber will run.
 
 ##Extension **Redux DevTools**
 Add this to the store to use the extension
-```
+```javascript
 	
 	var store = redux.createStore(reducer, redux.compose(
   		window.devToolsExtension ? window.devToolsExtension() : f => f
@@ -1106,7 +1106,7 @@ Add this to the store to use the extension
 
 ##Combine Reducers
 A way to separate code from the reducer.
-```
+```javascript
 
 	var nameReducer = (state = 'Anonymous', action) => {
 	  switch (action.type) {
@@ -1133,7 +1133,7 @@ A way to separate code from the reducer.
 ##Action Generators
 
 Simple way to create our action objects.
-```
+```javascript
 
 	var changeName = (name) => {
 	  return {
@@ -1147,7 +1147,7 @@ Simple way to create our action objects.
 
 ##Asynchronous Actions
 First create the `reducer`
-```
+```javascript
 
 	var mapReducer = (state = {isFetching: false, url: undefined}, action) => {
 	  switch (action.type) {
@@ -1168,7 +1168,7 @@ First create the `reducer`
 ```
 
 Then the actions
-```
+```javascript
 
 	var startLocationFetch = () => {
 	  return {
@@ -1184,7 +1184,7 @@ Then the actions
 	};
 ```
 Finally the function that will be in charge of the asynchrony 
-```
+```javascript
 
 	var fetchLocation = () => {
 	  store.dispatch(startLocationFetch());
@@ -1202,7 +1202,7 @@ Finally the function that will be in charge of the asynchrony
 Separate actions, reducers and store in different folders in files called **index.jsx**   
 We can export each object like
 
-```
+```javascript
 	
 	export var changeName = (name) => {
 	  return {
@@ -1214,7 +1214,7 @@ We can export each object like
 
 
 Then if we need to access the store from inside actions 
-```
+```javascript
 
 	var fetchLocation = () => {
 	  store.dispatch(startLocationFetch());
@@ -1226,7 +1226,7 @@ Then if we need to access the store from inside actions
 
 and use it as a middleware in  **configStore.jsx** `redux.applyMiddleware(thunk),`
 
-```
+```javascript
 
 	var thunk = require('redux-thunk').default;
 
@@ -1242,7 +1242,7 @@ and use it as a middleware in  **configStore.jsx** `redux.applyMiddleware(thunk)
 
 Change the way we use the `store` it in the `action`
 
-```
+```javascript
 
 	export var fetchLocation = () => {
 	  return (dispatch, getState) => {
@@ -1259,7 +1259,7 @@ And the way we call the `action`
 Deep Freeze will throw an error if a variable is changed.
 `npm install deep-freeze-stric --save-dev`
 
-```
+```javascript
 	var df = require('deep-freeze-strict');
 
 
@@ -1279,7 +1279,7 @@ Every component inside the `Provider` (and it children) will have access to the 
 
 **app.jsx**
 
-```
+```javascript
 	
 	var {Provider} = require('react-redux');
 
@@ -1302,7 +1302,7 @@ Instead of `exports` the react component, we connect the component to the provid
 We pass to `connect`  a function that have the `state` as an only argument `(state) => {}` and returns the object that we need to pass to our component.`todos: state.todos`
 
 
-```
+```javascript
 
 	module.exports = connect(
 	  (state) => {
@@ -1316,7 +1316,7 @@ We pass to `connect`  a function that have the `state` as an only argument `(sta
 ####Allow dispatch in components
 `connect` already allow us to use `dispatch`.
 
-```
+```javascript
 	
 	var {id, text, completed, createdAt, completedAt, dispatch} = this.props;
 
@@ -1325,7 +1325,7 @@ We pass to `connect`  a function that have the `state` as an only argument `(sta
 		dispatch(actions.toggleTodo(id));
 	})
 	module.exports = connect()(Todo)
-
+```
 ##Test React components with Redux
 Because we change the `exports` in the components we need to make some changes.   
 
@@ -1339,4 +1339,4 @@ Because we are now using `export default` we need to get the modules differently
 
 `import TodoList from 'TodoList'` instead of `require` 
 
-```
+```javascript
