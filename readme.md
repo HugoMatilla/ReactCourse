@@ -410,7 +410,7 @@ In Webpack: `presets: ['react', 'es2015','stage-0']`
 ##Routing 
 3 Parts
 
-###1 The Router Object
+###1.-The Router Object
 Is in the app.jsx. In the entry point of the app.  
 
 The _Router_ is the main component `<Router history={hashHistory}>` it needs the history to handle the backs.  
@@ -433,7 +433,7 @@ Inside the main _Route_ there are the child Routes `<Route path="about" componen
 	  document.getElementById('app')
 	);
 ```
-###2 Main
+###2.-Main
 
 The _Main_ object will be in charge of rendering the different pages of the  routing, therefore we need to set where we want the children to be rendered `{this.props.children}` 
 
@@ -453,7 +453,7 @@ The _Main_ object will be in charge of rendering the different pages of the  rou
 ```
 
 
-###3 Nav
+###3.-Nav
 In the Navigator component we can set `Links` that will redirect the app to the pages we want to show.
 
 ```javascript
