@@ -470,8 +470,7 @@ In the Navigator component we can set `Links` that will redirect the app to the 
 	    );
 	  }
 	});
-
-
+```
 
 ##Links
 IndexLink is the one set to the index: route `/` so React do not mess up other properties. 
