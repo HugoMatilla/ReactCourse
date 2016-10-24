@@ -287,10 +287,10 @@ npm install --save-dev webpack babel-core babel-loader babel-preset-es2015 babel
 
 
 Origin->Destiny
-webpack ./public/app.js ./public/bundle.js
+`webpack ./public/app.js ./public/bundle.js`
 
 ###webpack.config.js
-```json
+```javascript
 
 	module.exports = {
 	  entry: './public/app.js',
@@ -304,7 +304,7 @@ webpack ./public/app.js ./public/bundle.js
 	};
 ```
 ###Bable jsx loader
-```json
+```javascript
 
 	module.exports = {
 	  entry: './public/app.jsx',
@@ -331,9 +331,9 @@ webpack ./public/app.js ./public/bundle.js
 	    ]
 	  }
 	};
-
+```
 ###Webpack aliases
-```json
+```javascript
 
 	module.exports = {
 	    entry: './public/app.jsx',
@@ -364,9 +364,10 @@ webpack ./public/app.js ./public/bundle.js
 	    }
 	  };
 ```
-###EXperimental
+###Experimental
 `npm install --save-dev babel-preset-stage-0`
 In Webpack: `presets: ['react', 'es2015','stage-0']`
+
 #5.-Routing
 `npm install react-router --save`
 
@@ -1339,4 +1340,3 @@ Because we are now using `export default` we need to get the modules differently
 
 `import TodoList from 'TodoList'` instead of `require` 
 
-```javascript
